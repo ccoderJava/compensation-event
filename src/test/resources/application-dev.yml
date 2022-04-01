@@ -1,0 +1,27 @@
+DB_DRIVER: com.mysql.jdbc.Driver
+DB_URL: jdbc:mysql://localhost:3306/xxl_job?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+DB_USER: xxxxx
+DB_PASSWD: xxxxx
+XXL_DOMAIN: http://localhost/xxl-job-admin/
+XXL_LOG_KEEP_DAYS: 15
+XXL_PORT: 18899
+
+compensation:
+  event:
+    enabled: true
+    allowJobRetryDelay: 0s
+    retryBatchSize: 100
+    dataSourceBeanName: datasource
+    retryIntervals: 3s,3s
+    poolConfig:
+      corePoolSize: 5
+      maxPoolSize: 5
+      queueCapacity: 1000
+      keepAliveSeconds: 1800
+#    job:
+#      disabled: false
+#      overwrite: true
+#      suffix: _unittest
+#      crontab: 0/5 * * * * ?
+#      sharding-count: 2
+#      handlerCodeWhiteList: 1, 2, 3

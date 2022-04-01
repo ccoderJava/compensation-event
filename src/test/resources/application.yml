@@ -1,0 +1,33 @@
+xxl:
+  job:
+    enabled: true
+    accessToken:
+    admin:
+      addresses: http://localhost/xxl-job-admin/
+    executor:
+      address:
+      appname: ${spring.application.name}
+      ip: ${server.ip}
+      logpath: /data/weblog/java/${spring.application.name}/xxl-job
+      logretentiondays: 15
+      port: 9999
+spring:
+  dataSource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xxl_job
+    username: xxxxx
+    password: xxxxx
+  application:
+    name: compensation-event-test
+
+compensation:
+  event:
+    enabled: true
+    allowJobRetryDelay: 0s
+    retryBatchSize: 100
+    retryIntervals: 5s,10s
+    poolConfig:
+      corePoolSize: 5
+      maxPoolSize: 5
+      queueCapacity: 1000
+      keepAliveSeconds: 1800
