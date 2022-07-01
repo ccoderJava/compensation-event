@@ -12,11 +12,14 @@ import org.springframework.context.annotation.Import;
  */
 @Import(CompensationEventAutoConfiguration.class)
 @SpringBootApplication()
-//@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class CompensationEventTestApplication {
 
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(CompensationEventTestApplication.class);
+        // 启动spring-boot
+        System.setProperty("CONSUL_HOST","127.0.0.1");
+        System.setProperty("spring.profiles.active", "local-dev");
+
         application.run(args);
     }
 

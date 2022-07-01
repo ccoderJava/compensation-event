@@ -3,20 +3,20 @@ xxl:
     enabled: true
     accessToken:
     admin:
-      addresses: http://localhost/xxl-job-admin/
+      addresses: ${XXL_DOMAIN:http://localhost/xxl-job-admin/}
     executor:
       address:
       appname: ${spring.application.name}
-      ip: ${server.ip}
+      ip: ${spring.cloud.client.ip-address}
       logpath: /data/weblog/java/${spring.application.name}/xxl-job
       logretentiondays: 15
       port: 9999
 spring:
   dataSource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/xxl_job
-    username: xxxxx
-    password: xxxxx
+    url: jdbc:mysql://localhost:3306/test_db
+    username: root
+    password: chencong
   application:
     name: compensation-event-test
 

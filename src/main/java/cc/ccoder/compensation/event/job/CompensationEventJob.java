@@ -29,7 +29,7 @@ public class CompensationEventJob {
         this.compensationEventRetryService = compensationEventRetryService;
     }
 
-    @XxlJob("compensationEventHandler")
+    @XxlJob("compensationEventHandlerJob")
     public ReturnT<String> compensationEventHandler(String params) {
         log.info("重试处理器参数:{}", params);
         ShardingUtil.ShardingVO shardingVO = ShardingUtil.getShardingVo();
